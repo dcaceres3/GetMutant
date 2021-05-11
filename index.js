@@ -19,7 +19,8 @@ exports.handler = async (event) => {
         humansCount = await getCount(isHuman);
         let humans = humansCount.results[0]["COUNT(*)"];
         //Calculo el promedio de mutantes
-        mutantAverage = mutants/2;
+        let totalEvaluated = mutants + humans;
+        mutantAverage = mutants/totalEvaluated;
          console.log("muestro q hay en mutant average: "+mutantAverage);
         //Armo mensaje de respuesta 
         let statusCode = 200
